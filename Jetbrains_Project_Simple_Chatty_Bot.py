@@ -12,23 +12,32 @@ def remind_name():
 def guess_age():
     print('Let me guess your age.')
     print('Enter remainders of dividing your age by 3, 5 and 7.')
+    while True:
+        try:
+            rem3 = int(input())
+            rem5 = int(input())
+            rem7 = int(input())
+            age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105
 
-    rem3 = int(input())
-    rem5 = int(input())
-    rem7 = int(input())
-    age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105
-
-    print("Your age is " + str(age) + "; that's a good time to start programming!")
+            print("Your age is " + str(age) + "; that's a good time to start programming!")
+            break
+        except ValueError:
+            print('Write a number')
 
 
 def count():
     print('Now I will prove to you that I can count to any number you want.')
 
-    num = int(input())
-    curr = 0
-    while curr <= num:
-        print(curr, '!')
-        curr += 1
+    while True:
+        try:
+            num = int(input())
+            curr = 0
+            while curr <= num:
+                print(curr, '!')
+                curr += 1
+            break
+        except ValueError:
+            print('Write a number')
 
 
 def test():
